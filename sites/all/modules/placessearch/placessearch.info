@@ -1,0 +1,5 @@
+name = Google Places Search
+core = 7.x
+description = A form to search for attractions by place.
+package = Custom Modules
+files[] = places.module
