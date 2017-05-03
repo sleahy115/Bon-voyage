@@ -1,0 +1,28 @@
+<?php
+  function maps_menu() {
+    $items['map'] = array(
+      'title' => 'Map',
+      'page callback' => 'api',
+      'access callback' => TRUE,
+      'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+  }
+
+  function api() {
+    $maps_query = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBoFYMkLFONq2oJKv3EzmHjwCQBT0Pp6A0&callback=initMap";
+    // $result = file_get_contents($maps_query);
+    // $maps_array =  json_decode($result, true);
+    // var_dump($map_array);
+
+    // function initMap() {
+    //   map = new google.maps.Map(document.getElementById('map'), {
+    //     center: { lat: -8.409518, lng: 115.188919},
+    //     zoom: 8
+    //   });
+    // }
+
+  }
+
+
+// apikey: AIzaSyBoFYMkLFONq2oJKv3EzmHjwCQBT0Pp6A0

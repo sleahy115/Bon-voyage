@@ -1,0 +1,5 @@
+name = Bon Voyage Maps
+description = A module using google maps to display map information
+package = Custom Modules
+core = 7.x
+files[] = maps.module
