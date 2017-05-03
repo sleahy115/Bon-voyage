@@ -1,0 +1,52 @@
+html {
+  font-family: 'Kaushan Script', cursive;
+  background-color: #8E4A49;
+}
+
+#header {
+  background: url('../../../../images/mountains.png');
+  background-position: absolute;
+  top: 0;
+  height: 200px;
+}
+
+#name-and-slogan {
+  /*text-align: center;*/
+  margin-left: 45%;
+}
+
+#logo-image {
+  margin-left: 45%;
+}
+
+#site-name {
+  font-size: 150%;
+}
+
+.map-display {
+  width: 800px;
+  margin: 0 auto;
+  border: 5px solid black;
+}
+
+#mainmenusection {
+  background-color: #7DAA92;
+  width: 100%;
+  padding: 10px;
+}
+
+#sidebar-first {
+  width: 30%;
+  float: left;
+}
+
+#content {
+  width: 30%;
+  margin: 0 auto;
+  float: inherit;
+}
+
+#sidebar-second {
+  width: 30%;
+  float: right;
+}
