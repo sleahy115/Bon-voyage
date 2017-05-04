@@ -45,29 +45,27 @@ function places_form_submit($form, &$form_state) {
     $form_state['redirect'] = 'success';
     }
 
-function places_search() {
-        $output = '';
-        $rating = '';
-        $api_key = 'AIzaSyBYHchyBbsoRlietf6HpsRWTFN4p7RE5V4';
-        $attraction = $_SESSION['attraction'];
-        if(str_word_count($attraction) > 1) {
-        $attraction = preg_replace('/\s+/', '', $attraction);
-        }else {
-        $attraction = $attraction;
-        }
-
-        $city = $_SESSION['city'];
-        if(str_word_count($city) > 1) {
-        $city = preg_replace('/\s+/', '', $city);
-        }else {
-        $city = $city;
-        }
-
-        $api_call ='https://maps.googleapis.com/maps/api/place/textsearch/json?query='.$attraction.'+in+'.$city.'&key='.$api_key;
-        var_dump($api_call);
-        $result_string = file_get_contents($api_call);
-        var_dump($result_string);
-        $result_array = json_decode($result_string, TRUE);
+// function places_search() {
+//         $output = '';
+//         $rating = '';
+//         $api_key = 'AIzaSyBYHchyBbsoRlietf6HpsRWTFN4p7RE5V4';
+//         $attraction = $_SESSION['attraction'];
+//         if(str_word_count($attraction) > 1) {
+//         $attraction = preg_replace('/\s+/', '', $attraction);
+//         }else {
+//         $attraction = $attraction;
+//         }
+//
+//         $city = $_SESSION['city'];
+//         if(str_word_count($city) > 1) {
+//         $city = preg_replace('/\s+/', '', $city);
+//         }else {
+//         $city = $city;
+//         }
+//
+//         $api_call ='https://maps.googleapis.com/maps/api/place/textsearch/json?query='.$attraction.'+in+'.$city.'&key='.$api_key;
+//         $result_string = file_get_contents($api_call);
+//         $result_array = json_decode($result_string, TRUE);
 //         if(empty($result_array['results'] === 'false')) {
 //         for ($i=0; $i < count($result_array['results']); $i++) {
 //             $address = $result_array['results'][$i]['formatted_address'];
@@ -88,4 +86,4 @@ function places_search() {
 //             $output = "Sorry no results";
 //         }
 //         return $output;
-    }
+//     }
