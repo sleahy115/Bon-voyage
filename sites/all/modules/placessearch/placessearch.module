@@ -64,28 +64,26 @@ function places_search() {
         }
 
         $api_call ='https://maps.googleapis.com/maps/api/place/textsearch/json?query='.$attraction.'+in+'.$city.'&key='.$api_key;
-        var_dump($api_call);
         $result_string = file_get_contents($api_call);
-        var_dump($result_string);
         $result_array = json_decode($result_string, TRUE);
-//         if(empty($result_array['results'] === 'false')) {
-//         for ($i=0; $i < count($result_array['results']); $i++) {
-//             $address = $result_array['results'][$i]['formatted_address'];
-//             $name = $result_array['results'][$i]['name'];
-//             $place_id = $result_array['results'][$i]['place_id'];
-//               if(empty((string)$result_array['results'][$i]['rating']) === false) {
-//                   $rating = (string)$result_array['results'][$i]['rating'];
-//               }else {
-//                 $rating = "Sorry no rating";
-//               }
-//             $output=$output.<<<EOD
-//             <h2>$name</h2>
-//             <h4>Address: $address </h4>
-//             <h4>Rating: $rating </h4>
-// EOD;
-//         }
-//         } else {
-//             $output = "Sorry no results";
-//         }
-//         return $output;
+        if(empty($result_array['results'] === 'false')) {
+        for ($i=0; $i < count($result_array['results']); $i++) {
+            $address = $result_array['results'][$i]['formatted_address'];
+            $name = $result_array['results'][$i]['name'];
+            $place_id = $result_array['results'][$i]['place_id'];
+              if(empty((string)$result_array['results'][$i]['rating']) === false) {
+                  $rating = (string)$result_array['results'][$i]['rating'];
+              }else {
+                $rating = "Sorry no rating";
+              }
+            $output=$output.<<<EOD
+            <h2>$name</h2>
+            <h4>Address: $address </h4>
+            <h4>Rating: $rating </h4>
+EOD;
+        }
+        } else {
+            $output = "Sorry no results";
+        }
+        return $output;
     }
